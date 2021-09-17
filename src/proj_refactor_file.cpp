@@ -1,75 +1,21 @@
 //============================================================================
 // Name        : proj_refactor_file
-// Author      : 
-// Version     :
+// Author      : Pramod Mamillapalli
+// Version     : 09-17-2021
 // Copyright   : Steal this code!
 // Description : learn how to refactor files into a sensible directory structure
 //============================================================================
 #include <iostream>
 #include <string>
 #include <vector>
-
-//default files to read and write data
-const std::string SOURCE_FILE 	= "source_file.txt";
-const std::string RESULTS_FILE 	= "results_file.txt";
-
-//default return types
-const int 			EMPTY			 				=  0;
-const int 			SUCCESS			 				=  0;
-const int 			FAIL							=  SUCCESS - 1;
-const int 			COULD_NOT_OPEN_FILE				=  SUCCESS - 2;
-const int 			NO_DATA_TO_WORK_ON				=  SUCCESS - 3;
-const int			UNIMPLEMENTED					=  SUCCESS - 4;
-const int			UNINITIALIZED					=  SUCCESS - 5;
-
-//some data structures
-enum SORT_ORDER { PROCESS_NUMBER, CPU_TIME, START_TIME };
-struct process{	int process_number=UNINITIALIZED;
-				int cpu_time=UNINITIALIZED;
-				int start_time=UNINITIALIZED;};
-
-
-//attempt to open file 'filename' and read in all data
-//returns SUCCESS if all goes well or COULD_NOT_OPEN_FILE
-int load(const std::string filename, std::vector<process> &myProcesses){
-	return UNIMPLEMENTED;
-}
-
-//attempt to create or open file 'filename' to write all data to
-//returns SUCCESS if all goes well or COULD_NOT_OPEN_FILE
-int save(const std::string filename, std::vector<process> &myProcesses){
-	return UNIMPLEMENTED;
-}
-
-//sorts vector inplace based on mySortOrder (inplace means the vector is modified)
-//returns nothing
-void sort(const SORT_ORDER &mySortOrder,std::vector<process> &myProcesses){
-
-}
-
-//gets the next process from the vector, then removes it from the vector
-//returns removed process
-process getNext(std::vector<process> &myProcesses){
-	process p;
-	return p;
-}
-
-//returns the number of entries in the vector
-int getSize(std::vector<process> &myProcesses){
-	return UNIMPLEMENTED;
-}
-
-//attempt to correct missing data
-//if cannot correct, then drop row
-//return number of rows in myProcesses
-int handleMissingData(std::vector<process> &myProcesses){
-	return NO_DATA_TO_WORK_ON;
-}
+#include "../includes/constants.h"
+#include "../includes/fileio.h"
+#include "../includes/utils.h"
 
 int main() {
 	std::vector<process> myProcesses;
 
-	//assumme failure
+	//assume failure
 	int iRet = FAIL;
 
 	//get raw data
